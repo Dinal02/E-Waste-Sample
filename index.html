@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GreenCity Municipal E-Waste Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #2c7873;
+        --secondary: #6fb98f;
+        --accent: #ff914d;
+        --dark: #004445;
+        --light: #f8f8f8;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: var(--light);
+      }
+
+      .hero-section {
+        background: linear-gradient(
+          135deg,
+          #8bc34a 0%,
+          #4caf50 50%,
+          #2e7d32 100%
+        );
+      }
+
+      .btn-primary {
+    background-color: #00BCD4; /* Cyan */
+    color: white;
+    transition: all 0.3s ease;
+}
+
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-input {
+        transition: all 0.3s ease;
+      }
+
+      .form-input:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(44, 120, 115, 0.2);
+      }
+
+      .fade-in {
+        animation: fadeIn 0.5s ease-in;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .item-list li {
+        transition: all 0.3s ease;
+      }
+
+      .item-list li:hover {
+        background-color: rgba(111, 185, 143, 0.1);
+      }
+
+      .nav-link {
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: var(--accent);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="sticky top-0 z-50 bg-white shadow-md px-5 py-3">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center">
+          <!-- <div class="w-12 h-12 mr-3">
+                    <img src="https://placehold.co/48" alt="GreenCity Municipal Corporation logo featuring a leaf and recycling symbol in green and blue" />
+                </div> -->
+          <h1 class="text-xl font-bold text-gray-800 font-roboto">
+            GreenCity <span class="text-green-600">E-Waste</span>
+          </h1>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+          <a href="#home" class="nav-link text-gray-700 hover:text-green-600"
+            >Home</a
+          >
+          <a
+            href="#services"
+            class="nav-link text-gray-700 hover:text-green-600"
+            >Services</a
+          >
+          <a href="#request" class="nav-link text-gray-700 hover:text-green-600"
+            >Request Pickup</a
+          >
+          <a href="#about" class="nav-link text-gray-700 hover:text-green-600"
+            >About Us</a
+          >
+          <a href="#contact" class="nav-link text-gray-700 hover:text-green-600"
+            >Contact</a
+          >
+        </nav>
+        <button class="md:hidden focus:outline-none">
+          <svg
+            class="w-6 h-6 text-gray-700"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <section id="home" class="hero-section text-white py-20 fade-in">
+      <div
+        class="container mx-auto px-5 flex flex-col md:flex-row items-center justify-center"
+      >
+        <div class="md:w-1/2 mb-10 md:mb-0 ps-3 ms-3">
+          <h2
+            class="text-4xl md:text-5xl font-bold mb-4 text-center md:text-left"
+          >
+            Responsible E-Waste Disposal for a Cleaner City
+          </h2>
+          <p class="text-lg mb-8 text-center md:text-left">
+            GreenCity Municipal Corporation provides safe and convenient e-waste
+            collection services to keep our environment clean and healthy.
+          </p>
+          <div class="text-center md:text-left">
+            <a
+              href="#request"
+              class="btn-primary inline-block px-8 py-3 rounded-full font-semibold text-white"
+            >
+              Request Pickup
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/2 ps-3">
+          <!-- <img src="https://placehold.co/600x400" alt="Happy municipal workers collecting electronic waste from residents in a clean urban neighborhood" class="rounded-lg shadow-xl mx-auto" /> -->
+          <img src="main.png" alt="E-Waste Disposal" class="w-3/4 md:w-4/5 max-w-md mx-auto rounded-lg" />
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+          Our E-Waste Services
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="card bg-gray-50 p-6 rounded-lg">
+            <div class="w-16 h-16">
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+              Doorstep Collection
+            </h3>
+            <p class="text-gray-600">
+              Schedule a pickup and our team will collect your e-waste from your
+              home or office at a time convenient for you.
+            </p>
+          </div>
+
+          <div class="card bg-gray-50 p-6 rounded-lg">
+            <div class="w-16 h-16">
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+              Safe Recycling
+            </h3>
+            <p class="text-gray-600">
+              We ensure all collected e-waste is processed through certified
+              recycling facilities following environmental guidelines.
+            </p>
+          </div>
+
+          <div class="card bg-gray-50 p-6 rounded-lg">
+            <div class="w-16 h-16">
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+              Data Security
+            </h3>
+            <p class="text-gray-600">
+              Your sensitive data on old devices is securely destroyed before
+              recycling, giving you peace of mind.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="request" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+          Request E-Waste Pickup
+        </h2>
+
+        <div
+          class="max-w-3xl mx-auto bg-white rounded-xl shadow-md overflow-hidden p-6 md:p-8"
+        >
+          <form id="pickupForm" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-gray-700 mb-2"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none"
+                  required
+                />
+              </div>
+              <div>
+                <label for="phone" class="block text-gray-700 mb-2"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none"
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="address" class="block text-gray-700 mb-2"
+                >Complete Address</label
+              >
+              <textarea
+                id="address"
+                rows="3"
+                class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none"
+                required
+              ></textarea>
+            </div>
+
+            <div>
+              <label class="block text-gray-700 mb-3"
+                >Select E-Waste Items</label
+              >
+              <ul class="item-list space-y-2">
+                <li class="flex items-center">
+                  <input type="checkbox" id="laptop" class="mr-3 h-5 w-5" />
+                  <label for="laptop" class="text-gray-700"
+                    >Laptop/Computer</label
+                  >
+                </li>
+                <li class="flex items-center">
+                  <input type="checkbox" id="mobile" class="mr-3 h-5 w-5" />
+                  <label for="mobile" class="text-gray-700">Mobile Phone</label>
+                </li>
+                <li class="flex items-center">
+                  <input type="checkbox" id="television" class="mr-3 h-5 w-5" />
+                  <label for="television" class="text-gray-700"
+                    >Television</label
+                  >
+                </li>
+                <li class="flex items-center">
+                  <input type="checkbox" id="printer" class="mr-3 h-5 w-5" />
+                  <label for="printer" class="text-gray-700"
+                    >Printer/Scanner</label
+                  >
+                </li>
+                <li class="flex items-center">
+                  <input type="checkbox" id="other" class="mr-3 h-5 w-5" />
+                  <label for="other" class="text-gray-700"
+                    >Other Electronic Items</label
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <label for="date" class="block text-gray-700 mb-2"
+                >Preferred Pickup Date</label
+              >
+              <input
+                type="date"
+                id="date"
+                class="form-input w-full px-4 py-2 border rounded-lg focus:outline-none"
+                min="2023-01-01"
+                required
+              />
+            </div>
+
+            <div class="flex items-center">
+              <input type="checkbox" id="terms" class="mr-3 h-5 w-5" required />
+              <label for="terms" class="text-gray-700"
+                >I agree to the terms and conditions of e-waste
+                collection</label
+              >
+            </div>
+
+            <button
+              type="submit"
+              class="btn-primary w-full py-3 rounded-lg font-semibold text-white"
+            >
+              Submit Request
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+          Our E-Waste Process
+        </h2>
+
+        <div class="relative">
+          <div
+            class="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gray-200 -translate-y-1/2"
+          ></div>
+
+          <div class="relative grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4">
+            <!-- Step 1 -->
+            <div
+              class="relative z-10 bg-white p-6 rounded-lg shadow-md text-center"
+            >
+              <div
+                class="w-16 h-16 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-xl"
+              >
+                1
+              </div>
+              <h3 class="text-xl font-semibold mb-2 text-gray-800">
+                Request Pickup
+              </h3>
+              <p class="text-gray-600">
+                Fill out our simple pickup request form with your details and
+                e-waste items.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div
+              class="relative z-10 bg-white p-6 rounded-lg shadow-md text-center"
+            >
+              <div
+                class="w-16 h-16 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-xl"
+              >
+                2
+              </div>
+              <h3 class="text-xl font-semibold mb-2 text-gray-800">
+                Collection
+              </h3>
+              <p class="text-gray-600">
+                Our trained personnel visit your location to collect the e-waste
+                on the scheduled date.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div
+              class="relative z-10 bg-white p-6 rounded-lg shadow-md text-center"
+            >
+              <div
+                class="w-16 h-16 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-xl"
+              >
+                3
+              </div>
+              <h3 class="text-xl font-semibold mb-2 text-gray-800">
+                Transport & Sorting
+              </h3>
+              <p class="text-gray-600">
+                Items are securely transported to our facility for sorting by
+                category and condition.
+              </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div
+              class="relative z-10 bg-white p-6 rounded-lg shadow-md text-center"
+            >
+              <div
+                class="w-16 h-16 mx-auto mb-4 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-xl"
+              >
+                4
+              </div>
+              <h3 class="text-xl font-semibold mb-2 text-gray-800">
+                Recycling
+              </h3>
+              <p class="text-gray-600">
+                Items are processed through certified recycling partners
+                following all environmental regulations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-10">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-lg font-semibold mb-4">GreenCity E-Waste</h3>
+            <p class="text-gray-400">
+              Responsible e-waste management for a cleaner, healthier city.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-400 hover:text-white transition"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-400 hover:text-white transition"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#request"
+                  class="text-gray-400 hover:text-white transition"
+                  >Request Pickup</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-white transition"
+                  >About Us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-4">Other Services</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Waste Management</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Sanitation</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Hazardous Waste</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-gray-400 mt-4">
+              Subscribe to our newsletter for updates:
+            </p>
+            <div class="flex mt-2">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="px-3 py-2 bg-gray-700 text-white rounded-l focus:outline-none flex-grow"
+              />
+              <button
+                class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-r"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400"
+        >
+          <p>© 2025 GreenCity Municipal Corporation. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      id="confirmationModal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+    >
+      <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+        <div class="text-center mb-6">
+          <div class="w-16 h-16 mx-auto mb-4">
+            <img
+              src="https://placehold.co/64"
+              alt="Green checkmark icon indicating successful submission"
+            />
+          </div>
+          <h3 class="text-xl font-bold mb-2">
+            Request Submitted Successfully!
+          </h3>
+          <p class="text-gray-600">
+            Your e-waste pickup request has been received. Our team will contact
+            you shortly to confirm the details.
+          </p>
+        </div>
+        <div class="text-center">
+          <button
+            onclick="closeModal()"
+            class="btn-primary px-6 py-2 rounded-lg font-semibold text-white"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Form submission handler
+      document
+        .getElementById("pickupForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // In a real application, you would send the form data to the server here
+          // For this demo, we'll just show the confirmation modal
+
+          // Reset form
+          this.reset();
+
+          // Show confirmation modal
+          document
+            .getElementById("confirmationModal")
+            .classList.remove("hidden");
+        });
+
+      function closeModal() {
+        document.getElementById("confirmationModal").classList.add("hidden");
+      }
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Mobile menu toggle functionality (would need to be implemented fully)
+      const mobileMenuButton = document.querySelector(".md:hidden");
+      mobileMenuButton.addEventListener("click", function () {
+        // This would toggle a mobile menu in a real implementation
+        alert("Mobile menu would open here in a full implementation");
+      });
+
+      // Animation on scroll
+      window.addEventListener("scroll", function () {
+        const sections = document.querySelectorAll("section");
+        sections.forEach((section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (sectionTop < windowHeight - 100) {
+            section.classList.add("fade-in");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
