@@ -118,41 +118,32 @@
             GreenCity <span class="text-green-600">E-Waste</span>
           </h1>
         </div>
-        <nav class="hidden md:flex space-x-8">
-          <a href="#home" class="nav-link text-gray-700 hover:text-green-600"
-            >Home</a
-          >
-          <a
-            href="#services"
-            class="nav-link text-gray-700 hover:text-green-600"
-            >Services</a
-          >
-          <a href="#request" class="nav-link text-gray-700 hover:text-green-600"
-            >Request Pickup</a
-          >
-          <a href="#about" class="nav-link text-gray-700 hover:text-green-600"
-            >About Us</a
-          >
-          <a href="#contact" class="nav-link text-gray-700 hover:text-green-600"
-            >Contact</a
-          >
-        </nav>
-        <button class="md:hidden focus:outline-none">
-          <svg
-            class="w-6 h-6 text-gray-700"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            ></path>
-          </svg>
-        </button>
+        <!-- Desktop Nav -->
+<nav class="hidden md:flex space-x-8">
+  <a href="#home" class="nav-link text-gray-700 hover:text-green-600">Home</a>
+  <a href="#services" class="nav-link text-gray-700 hover:text-green-600">Services</a>
+  <a href="#request" class="nav-link text-gray-700 hover:text-green-600">Request Pickup</a>
+  <a href="#about" class="nav-link text-gray-700 hover:text-green-600">About Us</a>
+  <a href="#contact" class="nav-link text-gray-700 hover:text-green-600">Contact</a>
+</nav>
+
+        <!-- Mobile Menu Button -->
+<button id="mobile-menu-button" class="md:hidden focus:outline-none">
+  <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M4 6h16M4 12h16m-7 6h7" />
+  </svg>
+</button>
+
+        <!-- Mobile Nav Menu (hidden by default) -->
+<div id="mobile-menu" class="md:hidden hidden flex-col space-y-4 mt-4">
+  <a href="#home" class="nav-link text-gray-700 hover:text-green-600">Home</a>
+  <a href="#services" class="nav-link text-gray-700 hover:text-green-600">Services</a>
+  <a href="#request" class="nav-link text-gray-700 hover:text-green-600">Request Pickup</a>
+  <a href="#about" class="nav-link text-gray-700 hover:text-green-600">About Us</a>
+  <a href="#contact" class="nav-link text-gray-700 hover:text-green-600">Contact</a>
+</div>
+        
       </div>
     </header>
 
@@ -613,11 +604,14 @@ function closeModal() {
       });
 
       // Mobile menu toggle functionality (would need to be implemented fully)
-      const mobileMenuButton = document.querySelector(".md:hidden");
-      mobileMenuButton.addEventListener("click", function () {
-        // This would toggle a mobile menu in a real implementation
-        alert("Mobile menu would open here in a full implementation");
-      });
+      
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  mobileMenuButton.addEventListener("click", function () {
+    mobileMenu.classList.toggle("hidden");
+  });
+
 
       // Animation on scroll
       window.addEventListener("scroll", function () {
